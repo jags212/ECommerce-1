@@ -27,7 +27,7 @@ namespace ECommerce.Api.Products.Providers
 
         private void SeedData()
         {
-            if (dbContext.Products.Any())
+            if (!dbContext.Products.Any())
             {
                 dbContext.Products.Add(new Db.Product() { Id = 1, Name = "Keyboard", Price = 20, Inventory = 100 });
                 dbContext.Products.Add(new Db.Product() { Id = 2, Name = "Mouse", Price = 5, Inventory = 200 });
