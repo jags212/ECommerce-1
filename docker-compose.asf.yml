@@ -29,8 +29,8 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - Services__Products=http://10.0.0.4:19080/lil/products/
-      - Services__Customers=http://10.0.0.4/customers/
-      - Services__Orders=http://10.0.0.4/orders/
+      - Services__Customers=http://10.0.0.4:19080/lil/customers/
+      - Services__Orders=http://10.0.0.4:19080/lil/orders/
     ports:
       - "6004:80"
 
