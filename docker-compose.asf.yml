@@ -2,12 +2,14 @@ version: '3.4'
 
 services:
   customers:
+    image: nkhalili/ecommerceapicustomers:latest
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
     ports:
       - "80/http"
 
   orders:
+    image: nkhalili/ecommerceapiorders:latest
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
     ports:
@@ -15,6 +17,7 @@ services:
 
 
   products:
+    image: nkhalili/ecommerceapiproducts:latest
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
     ports:
@@ -22,9 +25,10 @@ services:
 
 
   search:
+    image: nkhalili/ecommerceapisearch:latest
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
-      - Services__Products=http://10.0.0.4/products/
+      - Services__Products=http://10.0.0.4:19080/lil/products/
       - Services__Customers=http://10.0.0.4/customers/
       - Services__Orders=http://10.0.0.4/orders/
     ports:
